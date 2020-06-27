@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  height: 100vh;
+  /* background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5); */
+  background-color: #fafafa;
+}
+
+h5{
+  margin: 5px 0;
+}
+
+span{
+  font-size: 0.7rem;
+  color: silver;
+}

@@ -1,0 +1,41 @@
+.login-div{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dbddbd;
+    border-radius: 10px;
+    width:200px;
+    height: 300px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+}
+.logo-div{
+    height: 50px;
+    width: 50px;
+    align-self: center;
+}
+input{
+    width: 95%;
+    border: 1px solid #dbddbd;
+    font-weight: 300 !important;
+    padding: 5px;
+    margin: 2px 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: #fafafa;
+    border-radius: 5px;
+    box-shadow: none;
+}
+button{
+    margin-top: 8px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: dodgerblue;
+    cursor: pointer;
+
+}
