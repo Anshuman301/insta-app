@@ -18,7 +18,9 @@ class Header extends React.Component{
                         <NavLink exact  to='/' ><Home className='img-svg'/></NavLink>
                         <NavLink exact to='/explore' ><Explore className='img-svg'/></NavLink>
                         {/* <NavLink to='/myprofile' className='img-svg' activeClassName='active'></NavLink> */}
-                        <button className='nav-div-div-button' onClick={() => handleClick(false)}>Log out</button>
+                        <button className='nav-div-div-button' onClick={() => {
+                            handleClick(false)
+                            history.push('/')}}>Log out</button>
                     </div>
                 </div>
             </nav>
