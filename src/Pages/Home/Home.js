@@ -7,9 +7,10 @@ import NewHome from '../NewHome/NewHome';
 import Profile from '../../Components/Profile/Profile';
 class Home extends React.Component{
     render(){
+        const {isLogged} = this.props
         return(
             <div>
-                <Header/>
+                <Header handleClick={isLogged}/>
                 <Switch>
                     <Route exact path='/' component={NewHome}/>
                     <Route exact path='/explore' component={Explore}/>

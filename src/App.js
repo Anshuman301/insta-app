@@ -15,7 +15,7 @@ class App extends React.Component{
                 <Switch>
                    {
                        isLogin ?
-                       <Route path='/' component={Home}/>
+                       <Route path='/' render = {() => <Home isLogged = {this.handleLogin}/>}/>
                        :
                        <Route exact path='/' render = {() =><Login login={this.handleLogin}/>}/>
                    } 

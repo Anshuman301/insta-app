@@ -7,17 +7,18 @@ import {ReactComponent as Explore } from '../../assets/explore.svg';
 import './header.css';
 class Header extends React.Component{
     render(){
-        const {history} = this.props
+        const {history,handleClick} = this.props
         return(
             <nav>
                 <div className='nav-div'>
                     <div className='img-svg'>
                         <Logo  onClick={() => history.push('/')}/>
                     </div>
-                    <div>
+                    <div style={{display:'flex',flexDirection:'row'}}>
                         <NavLink exact  to='/' ><Home className='img-svg'/></NavLink>
                         <NavLink exact to='/explore' ><Explore className='img-svg'/></NavLink>
                         {/* <NavLink to='/myprofile' className='img-svg' activeClassName='active'></NavLink> */}
+                        <button className='nav-div-div-button' onClick={() => handleClick(false)}>Log out</button>
                     </div>
                 </div>
             </nav>
