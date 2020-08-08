@@ -1,20 +1,20 @@
 import Axios from "axios";
 
-const fetchSuggestionsStart = () => ({
+export const fetchSuggestionsStart = () => ({
   type: "FETCH_SUGGESTIONS_START"
 });
 
-const fetchSuggestionsSuccess = feeds => ({
+export const fetchSuggestionsSuccess = (feeds) => ({
   type: "FETCH_SUGGESTIONS_SUCCESS",
   payload: feeds
 });
 
-const fetchSuggestionsFailure = error => ({
+export const fetchSuggestionsFailure = (error) => ({
   type: "FETCH_SUGGESTIONS_FAILURE",
   payload: error
 });
 
-export const fetchSuggestionsAsync = () => async dispatch => {
+export const fetchSuggestionsAsync = () => async (dispatch) => {
   dispatch(fetchSuggestionsStart());
   try {
     const resp = await Axios.get("https://jsonplaceholder.typicode.com/users");

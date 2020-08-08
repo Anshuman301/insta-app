@@ -3,18 +3,19 @@ import axios from "axios";
 import Feed from "../Feed/Feed";
 import "./feeds.css";
 import { connect } from "react-redux";
-import { fetchFeedsAsync } from "../../redux/action/fetchFeeds.action";
+import {
+  fetchFeedsAsync,
+  fetchFeedsStart
+} from "../../redux/action/fetchFeeds.action";
 class Feeds extends React.Component {
   componentDidMount() {
-    this.props.fetchFeeds();
+    this.props.fetchFeedsBySaga();
   }
   render() {
     const { feeds } = this.props;
     return (
       <div className="div-feeds">
-        {feeds.map(({ ...f }) => (
-          <Feed key={f.id} {...f} />
-        ))}
+        {feeds && feeds.map(({ ...f }) => <Feed key={f.id} {...f} />)}
       </div>
     );
   }
@@ -23,10 +24,8 @@ class Feeds extends React.Component {
 const mapStateToProps = ({ feeds: { data } }) => ({
   feeds: data
 });
-const mapDispatchToProps = dispatch => ({
-  fetchFeeds: () => dispatch(fetchFeedsAsync())
+const mapDispatchToProps = (dispatch) => ({
+  fetchFeeds: () => dispatch(fetchFeedsAsync()),
+  fetchFeedsBySaga: () => dispatch(fetchFeedsStart())
 });
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Feeds);
+export default connect(mapStateToProps, mapDispatchToProps)(Feeds);
